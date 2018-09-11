@@ -69,7 +69,7 @@ def menu_de_algoritmos():
             fim = time.time()
             result = fim - inicio
             print("O tempo de ordenação do heap em um vetor de {} elementos é de {} segundos.".format(i, result))
-        
+
     elif option == '4':
 
         for i in quantity:
@@ -83,11 +83,14 @@ def menu_de_algoritmos():
 
 def comparativo_de_algoritmos():
     limit = 1000**2
+    results_quicksort = []
+    results_mergesort = []
+    results_heapsort = []
+    results_radixsort = []
 
     for i in range(0,100):
         lista = cria_lista(1000, limit)
 
-        results_quicksort = []
         lista_quick = lista
         inicio = time.time()
         quick_sort(lista_quick, 0, len(lista_quick))
@@ -95,7 +98,6 @@ def comparativo_de_algoritmos():
         tempo = fim - inicio
         results_quicksort.append(tempo)
 
-        results_mergesort = []
         lista_merge = lista
         inicio = time.time()
         merge_sort(lista_merge)
@@ -103,7 +105,6 @@ def comparativo_de_algoritmos():
         tempo = fim - inicio
         results_mergesort.append(tempo)
 
-        results_heapsort = []
         lista_heap = lista
         inicio = time.time()
         heapsort(lista_heap)
@@ -111,14 +112,13 @@ def comparativo_de_algoritmos():
         tempo = fim - inicio
         results_heapsort.append(tempo)
 
-        results_radixsort = []
         lista_radix = lista
         inicio = time.time()
         radix_sort(lista_radix)
         fim = time.time()
         tempo = fim - inicio
         results_radixsort.append(tempo)
-        
+
     plota_grafico(results_quicksort, results_mergesort, results_heapsort, results_radixsort)
 
 initial_map = {
