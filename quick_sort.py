@@ -28,3 +28,6 @@ def quick_sort(list_elements, ponteiro_inicio, ponteiro_fim):
     # Trabalha na sublista da direita
     if inicio < ponteiro_fim:
         quick_sort(list_elements, inicio, ponteiro_fim)
+
+def print_list(list_elements):
+    print(list_elements)
